@@ -1,17 +1,18 @@
-import { Button } from "@/components/ui/button";
+import { MenuIcon } from "lucide-react";
+import Image from "next/image";
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { MenuIcon, Smartphone } from "lucide-react";
-import Image from "next/image";
+} from "./_components/ui/sheet";
+import CarouselWhy from "./_components/CarousselWhy";
+import ButtonOrcamento from "./_components/ButtonOrcamento";
 
 export default function Home() {
   return (
-    <div className="bg-[#3F5259] h-full">
+    <div className="bg-[#3F5259] h-full p-5">
       <header className="flex flex-row justify-between items-center">
         <Image
           src={"nautica-logo.svg"}
@@ -34,7 +35,7 @@ export default function Home() {
         </Sheet>
       </header>
 
-      <section className="flex flex-col items-center justify-center">
+      <main className="flex flex-col items-center justify-center">
         <div className="flex items-center justify-center">
           <Image
             src="/main-image.png"
@@ -56,9 +57,7 @@ export default function Home() {
           ⛵ Sua marca navegando em um mar de possibilidades!
         </h1>
 
-        <Button className="bg-gradient-to-r from-[#3F5259] to-[#888C80] w-60 h-14 rounded-full mt-5">
-          CRIE SUA FAIXADA
-        </Button>
+        <ButtonOrcamento text="CRIE SUA FAIXADA" />
 
         <div className="w-[350px] h-[80px] bg-gradient-to-r from-[#3F5259F2] to-[#0D1F26] rounded-full flex flex-1 mt-10 p-5">
           <div>
@@ -76,10 +75,46 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
-          <p className="mt-16">Sobre</p>
+        <div className="flex flex-col items-center">
+          <h1 className="mt-16 text-3xl font-bold text-white">Sobre</h1>
+
+          <Image
+            src={"nautica-logo.svg"}
+            alt="Logo"
+            width={395}
+            height={320}
+            className="mt-2 ml-24"
+          />
+
+          <p className="text-xl text-center text-white font-semibold ml-4 mr-4 mb-10">
+            Somos a Náutica Mídia, uma empresa especializada em comunicação
+            visual para empresas. Com anos de experiência e uma equipe altamente
+            capacitada, transformamos fachadas em verdadeiras obras de arte.
+            Utilizando materiais de alta qualidade como ACM, PVC e acrílico,
+            criamos placas personalizadas que refletem a identidade da sua
+            marca. Nossa missão é oferecer soluções completas e inovadoras,
+            desde o design até a instalação, garantindo a satisfação dos nossos
+            clientes.
+          </p>
         </div>
-      </section>
+
+        <div>
+          <h1 className="mt-10 text-3xl font-bold text-white text-center">
+            Por que escolher a
+            <span className="text-gray-500"> Naútica Midia</span>?
+          </h1>
+
+          <div className="flex items-center justify-center mt-5">
+            <CarouselWhy />
+          </div>
+
+          <div className="flex justify-center">
+            <ButtonOrcamento text="FAÇA UM ORÇAMENTO" />
+          </div>
+        </div>
+
+        <div className=""></div>
+      </main>
     </div>
   );
 }
