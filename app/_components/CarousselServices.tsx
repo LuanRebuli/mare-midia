@@ -59,7 +59,7 @@ const carousel: { [key: string]: CarouselServicesProps[] } = {
 export default function CarouselServices() {
   return (
     <>
-      <Carousel className="w-full max-w-xs mt-6 ">
+      <Carousel className="w-full max-w-xs mt-3 ">
         <CarouselContent>
           {Object.entries(carousel).map(([carouselKey, items]) =>
             items.map((item, index) => (
