@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
 import Image from "next/image";
 
@@ -17,12 +11,12 @@ interface CarouselServicesProps {
 const carousel: { [key: string]: CarouselServicesProps[] } = {
   firstcarousel: [
     {
-      url: "/saci.png",
+      url: "/algomais.png",
     },
   ],
   secondcarousel: [
     {
-      url: "/algomais.png",
+      url: "/saci.png",
     },
   ],
   tercarousel: [
@@ -65,30 +59,26 @@ const carousel: { [key: string]: CarouselServicesProps[] } = {
 export default function CarouselServices() {
   return (
     <>
-      <Carousel className="w-full max-w-xs mt-10">
+      <Carousel className="w-full max-w-xs mt-6 ">
         <CarouselContent>
           {Object.entries(carousel).map(([carouselKey, items]) =>
             items.map((item, index) => (
               <CarouselItem key={`${carouselKey}-${index}`}>
-                <div className="p-1">
-                  <Card className="bg-transparent border-none">
-                    <CardContent className="flex flex-col justify-center items-center p-6 w-[330px] h-[300px] ">
-                      <Image
-                        src={item.url}
-                        alt={item.url}
-                        width={370}
-                        height={300}
-                        className=""
-                      />
-                    </CardContent>
-                  </Card>
-                </div>
+                <Card className="bg-transparent border-none flex flex-col justify-center items-center">
+                  <CardContent className="flex  justify-center items-center p-6 w-[340px] h-[320px] ">
+                    <Image
+                      src={item.url}
+                      alt={item.url}
+                      width={400}
+                      height={300}
+                      className=""
+                    />
+                  </CardContent>
+                </Card>
               </CarouselItem>
             ))
           )}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </>
   );

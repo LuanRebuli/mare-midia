@@ -55,8 +55,8 @@ export default function CarouselWhy() {
           items.map((item, index) => (
             <CarouselItem key={`${carouselKey}-${index}`}>
               <div className="p-1">
-                <Card className="bg-gradient-to-r from-[#3a4a50] to-gray-800 rounded-3xl border-none outline-none">
-                  <CardContent className="flex flex-col justify-center items-center p-6 w-[330px] h-[560px] ">
+                <Card className="bg-gradient-to-r from-[#01094F] to-[#01214F] rounded-3xl">
+                  <CardContent className="flex flex-col justify-center items-center p-8 w-[313px] h-[560px] ">
                     <Image
                       src={item.url}
                       alt={item.title}
@@ -67,7 +67,7 @@ export default function CarouselWhy() {
                     <span className="text-2xl font-bold text-white">
                       {item.title}
                     </span>
-                    <p className="text-base text-white text-center mt-5 mb-5">
+                    <p className="text-base text-center text-white mt-5 mb-5">
                       {item.text}
                     </p>
                   </CardContent>
@@ -77,6 +77,7 @@ export default function CarouselWhy() {
           ))
         )}
       </CarouselContent>
+
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
