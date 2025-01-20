@@ -1,9 +1,34 @@
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <div>
-      <Image src={"/maremidia.png"} alt="footer" width={468} height={323} />
+    <div className="flex justify-center items-center flex-col mb-8 ">
+      <Image
+        src={"/maremidiafooter.png"}
+        alt="footer"
+        width={270}
+        height={100}
+      />
+      <h1 className="text-xl font-bold text-white text-center mt-5 ">
+        ⛵ Sua marca navegando em um mar de possibilidades!
+      </h1>
+
+      <a href="https://www.instagram.com/nautica_midia/">
+        <Button size={"icon"} className="bg-white rounded-full mt-5">
+          <Image
+            src={"/instagram.png"}
+            alt="instagram"
+            width={50}
+            height={50}
+            className="bg-slate-500 rounded-full"
+          />
+        </Button>
+      </a>
+
+      <h1 className="font-bold text-center text-sm text-white mt-8 pr-2 pl-2">
+        2024 © Maré Mídia - BY Luan Rebuli - ALL RIGHTS RESERVED{" "}
+      </h1>
     </div>
   );
 };

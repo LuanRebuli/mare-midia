@@ -4,6 +4,7 @@ import ButtonOrcamento from "./_components/ButtonOrcamento";
 import CarouselServices from "./_components/CarousselServices";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
+import WelcomeSchreen from "./_components/WelcomeSchreen";
 
 export default function Home() {
   return (
@@ -11,44 +12,7 @@ export default function Home() {
       <Header />
 
       <main className="flex flex-col items-center justify-center">
-        <div className="relative flex items-center justify-center h-[300px]">
-          <Image
-            src="/main-image.png"
-            alt="image from services concluded"
-            width={600}
-            height={300}
-            className="z-20 absolute right-3"
-          />
-          <Image
-            src={"rectangle.svg"}
-            alt="rectangle"
-            width={350}
-            height={350}
-            className=" z-10"
-          />
-        </div>
-
-        <h1 className="text-2xl font-bold text-white text-center mt-10">
-          ⛵ Sua marca navegando em um mar de possibilidades!
-        </h1>
-
-        <ButtonOrcamento text="CRIE SUA FAIXADA" />
-
-        <div className="w-[350px] h-[80px] bg-gradient-to-r from-[#01094F] to-[#003399]  rounded-full flex flex-1 mt-10 p-5">
-          <div>
-            <Image
-              src={"whatsappicon.svg"}
-              width={89}
-              height={63}
-              alt="whatsapp"
-              className="mr-6 ml-3"
-            />
-          </div>
-          <div>
-            <p className="font-bold text-2xl text-white">WhatsApp</p>
-            <p className="text-gray-300">(41) 99639-4174</p>
-          </div>
-        </div>
+        <WelcomeSchreen />
 
         <div className="flex flex-col items-center">
           <div className="h-[270px]">
@@ -88,7 +52,14 @@ export default function Home() {
           </div>
         </div>
 
-        <CarouselServices />
+        <div>
+          <h1 className="mt-20 text-3xl font-bold text-white text-center">
+            Serviços
+          </h1>
+          <div className="w-full h-[2px] bg-[#FFD700] mt-2 mb-2 opacity-50"></div>
+          <p className="text-xl text-white text-center">Já feitos por nós</p>
+          <CarouselServices />
+        </div>
         <Footer />
       </main>
     </div>

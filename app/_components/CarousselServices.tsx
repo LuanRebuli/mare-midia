@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
 import Image from "next/image";
 
@@ -59,18 +65,18 @@ const carousel: { [key: string]: CarouselServicesProps[] } = {
 export default function CarouselServices() {
   return (
     <>
-      <Carousel className="w-full max-w-xs mt-2">
+      <Carousel className="w-full max-w-xs">
         <CarouselContent>
           {Object.entries(carousel).map(([carouselKey, items]) =>
             items.map((item, index) => (
               <CarouselItem key={`${carouselKey}-${index}`}>
                 <Card className="bg-transparent border-none flex flex-col justify-center items-center">
-                  <CardContent className="flex  justify-center items-center p-6 w-[340px] h-[320px] ">
+                  <CardContent className="flex  justify-center items-center p-6 w-[340px] h-[300px] ">
                     <Image
                       src={item.url}
                       alt={item.url}
                       width={400}
-                      height={300}
+                      height={500}
                     />
                   </CardContent>
                 </Card>
@@ -78,6 +84,8 @@ export default function CarouselServices() {
             ))
           )}
         </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
     </>
   );

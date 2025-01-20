@@ -67,6 +67,7 @@ export default function CarouselWhy() {
                     <span className="text-2xl font-bold text-white">
                       {item.title}
                     </span>
+
                     <p className="text-base text-center text-white mt-5 mb-5">
                       {item.text}
                     </p>
