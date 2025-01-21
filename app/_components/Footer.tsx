@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <div className="flex justify-center items-center flex-col mb-8 ">
+    <div className="flex justify-center items-center flex-col mb-8 mt-36">
       <Image
         src={"/maremidiafooter.png"}
         alt="footer"
@@ -27,7 +27,14 @@ const Footer = () => {
       </a>
 
       <h1 className="font-bold text-center text-sm text-white mt-8 pr-2 pl-2">
-        2024 © Maré Mídia - BY Luan Rebuli - ALL RIGHTS RESERVED{" "}
+        2024 © Maré Mídia -{" "}
+        <a
+          href="https://wa.me/41920048586"
+          className="text-gray-400 hover:text-blue-500"
+        >
+          BY Luan Rebuli
+        </a>{" "}
+        - ALL RIGHTS RESERVED{" "}
       </h1>
     </div>
   );

@@ -48,7 +48,7 @@ const WelcomeSchreen = () => {
       {/* Desktop Schreen */}
       <div className="mobile:hidden laptop:block">
         <div className="grid grid-cols-2 w-full">
-          <div className="ml-20 mt-24">
+          <div className="ml-24 mt-24">
             <h1 className="text-4xl font-bold text-white text-center ">
               ⛵ Sua <span className="text-[#FFD700]">marca</span> navegando em
               um mar de
@@ -89,8 +89,8 @@ const WelcomeSchreen = () => {
                   height={97}
                 />
                 <div className="ml-5">
-                  <h1 className="text-white text-3xl">Instagram</h1>
-                  <p className="text-white text-xl">@nautica_midia</p>
+                  <h1 className="text-white text-3xl font-bold">Instagram</h1>
+                  <p className="text-white text-xl ">@nautica_midia</p>
                 </div>
               </a>
             </div>
@@ -110,8 +110,8 @@ const WelcomeSchreen = () => {
                   height={120}
                 />
                 <div className="ml-5">
-                  <h1 className="text-white text-3xl">Whatsapp</h1>
-                  <p className="text-white text-xl">(41) 99639-4174</p>
+                  <h1 className="text-white text-3xl font-bold">Whatsapp</h1>
+                  <p className="text-white text-xl ">(41) 99639-4174</p>
                 </div>
               </a>
             </div>

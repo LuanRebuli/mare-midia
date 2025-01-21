@@ -35,7 +35,7 @@ const carousel: { [key: string]: CarouselWhyProps[] } = {
     {
       title: "Processo",
       url: "/tercarousel.png",
-      text: "Após feito a concluao do layout começamoso corte de letras e logotipo com sua devida cor e preparação das estruturas. Após isso começamos a instalação no local com as estruturas de aço e colocando as placas.",
+      text: "Após feito a conclusão do layout, começamos o corte de letras e logotipo com sua devida cor e preparação das estruturas. Após isso começamos a instalação no local com as estruturas de aço e colocando as placas.",
     },
   ],
   fourcarousel: [
@@ -49,38 +49,76 @@ const carousel: { [key: string]: CarouselWhyProps[] } = {
 
 export default function CarouselWhy() {
   return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
-        {Object.entries(carousel).map(([carouselKey, items]) =>
-          items.map((item, index) => (
-            <CarouselItem key={`${carouselKey}-${index}`}>
-              <div className="p-1">
-                <Card className="bg-gradient-to-r from-[#01094F] to-[#01214F] rounded-3xl">
-                  <CardContent className="flex flex-col justify-center items-center p-8 w-[313px] h-[560px] ">
-                    <Image
-                      src={item.url}
-                      alt={item.title}
-                      width={262}
-                      height={213}
-                      className="rounded-full mb-3"
-                    />
-                    <span className="text-2xl font-bold text-white">
-                      {item.title}
-                    </span>
+    <>
+      {/* MOBILE LAYOUT */}
+      <Carousel className="w-full max-w-xs mobile:block laptop:hidden">
+        <CarouselContent>
+          {Object.entries(carousel).map(([carouselKey, items]) =>
+            items.map((item, index) => (
+              <CarouselItem key={`${carouselKey}-${index}`}>
+                <div className="p-1">
+                  <Card className="bg-gradient-to-r from-[#01094F] to-[#01214F] rounded-3xl">
+                    <CardContent className="flex flex-col justify-center items-center p-8 w-[313px] h-[560px] ">
+                      <Image
+                        src={item.url}
+                        alt={item.title}
+                        width={262}
+                        height={213}
+                        className="rounded-full mb-3"
+                      />
+                      <span className="text-2xl font-bold text-white">
+                        {item.title}
+                      </span>
 
-                    <p className="text-base text-center text-white mt-5 mb-5">
-                      {item.text}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </CarouselItem>
-          ))
-        )}
-      </CarouselContent>
+                      <p className="text-base text-center text-white mt-5 mb-5">
+                        {item.text}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))
+          )}
+        </CarouselContent>
 
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+
+      {/* DESKTOP LAYOUT */}
+      <Carousel className="w-[1350px] mobile:hidden laptop:block">
+        <CarouselContent>
+          {Object.entries(carousel).map(([carouselKey, items]) =>
+            items.map((item, index) => (
+              <CarouselItem
+                key={`${carouselKey}-${index}`}
+                className="basis-1/4 w-[500px]"
+              >
+                <div className="p-1">
+                  <Card className="bg-gradient-to-r from-[#01094F] to-[#01214F] rounded-3xl ">
+                    <CardContent className="flex flex-col justify-center items-center p-8 w-[313px] h-[560px] ">
+                      <Image
+                        src={item.url}
+                        alt={item.title}
+                        width={262}
+                        height={213}
+                        className="rounded-full mb-3"
+                      />
+                      <span className="text-2xl font-bold text-white">
+                        {item.title}
+                      </span>
+
+                      <p className="text-base text-center text-white mt-5 mb-5">
+                        {item.text}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))
+          )}
+        </CarouselContent>
+      </Carousel>
+    </>
   );
 }

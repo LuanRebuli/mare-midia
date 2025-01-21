@@ -65,7 +65,8 @@ const carousel: { [key: string]: CarouselServicesProps[] } = {
 export default function CarouselServices() {
   return (
     <>
-      <Carousel className="w-full max-w-xs">
+      {/* MOBILE LAYOUT */}
+      <Carousel className="w-full max-w-xs mobile:block laptop:hidden">
         <CarouselContent>
           {Object.entries(carousel).map(([carouselKey, items]) =>
             items.map((item, index) => (
@@ -87,6 +88,29 @@ export default function CarouselServices() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+
+      {/* DESKTOP LAYOUT */}
+      <div className="w-[1750px] mobile:hidden laptop:block mt-24">
+        <div className="grid grid-cols-5 gap-14">
+          {Object.entries(carousel).map(([carouselKey, items]) =>
+            items.map((item, index) => (
+              <Card
+                className="bg-transparent border-none flex flex-col justify-center items-center"
+                key={`${carouselKey}-${index}`}
+              >
+                <CardContent className="flex  justify-center items-center p-6 w-[340px] h-[300px] ">
+                  <Image
+                    src={item.url}
+                    alt={item.url}
+                    width={500}
+                    height={500}
+                  />
+                </CardContent>
+              </Card>
+            ))
+          )}
+        </div>
+      </div>
     </>
   );
 }
