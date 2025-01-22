@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <div className="flex justify-center items-center flex-col mb-8 mt-36">
+    <div className="flex justify-center items-center flex-col mb-8 laptop:mt-36 mobile:mt-10">
       <Image
         src={"/maremidiafooter.png"}
         alt="footer"

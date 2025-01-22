@@ -66,7 +66,7 @@ export default function CarouselServices() {
   return (
     <>
       {/* MOBILE LAYOUT */}
-      <Carousel className="w-full max-w-xs mobile:block laptop:hidden">
+      <Carousel className="w-full max-w-xs mobile:block laptop:hidden mt-7">
         <CarouselContent>
           {Object.entries(carousel).map(([carouselKey, items]) =>
             items.map((item, index) => (

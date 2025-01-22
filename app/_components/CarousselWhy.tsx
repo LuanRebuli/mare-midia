@@ -34,14 +34,14 @@ const carousel: { [key: string]: CarouselWhyProps[] } = {
   tercarousel: [
     {
       title: "Processo",
-      url: "/tercarousel.png",
+      url: "/tercarousel.jpg",
       text: "Após feito a conclusão do layout, começamos o corte de letras e logotipo com sua devida cor e preparação das estruturas. Após isso começamos a instalação no local com as estruturas de aço e colocando as placas.",
     },
   ],
   fourcarousel: [
     {
       title: "Conclusão",
-      url: "/fourcarousel.png",
+      url: "/fourcarousel.jpg",
       text: "Finalizamos a instalação com precisão, cuidando de cada detalhe, como a instalação de LEDs, para garantir um resultado impecável e que atraia a atenção de seus clientes.",
     },
   ],
@@ -102,7 +102,7 @@ export default function CarouselWhy() {
                         alt={item.title}
                         width={262}
                         height={213}
-                        className="rounded-full mb-3"
+                        className="rounded-full mb-5"
                       />
                       <span className="text-2xl font-bold text-white">
                         {item.title}
