@@ -1,9 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const AbouthMare = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024); // Considera mobile se largura for menor que 1024px
+    };
+
+    handleResize(); // Executa uma vez
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <div className="mobile:block laptop:hidden">
+      {isMobile ? (
         <div className="flex flex-col items-center">
           <div className="h-[270px]">
             <Image
@@ -26,9 +42,7 @@ const AbouthMare = () => {
             clientes.
           </p>
         </div>
-      </div>
-
-      <div className="mobile:hidden laptop:block">
+      ) : (
         <div className="flex flex-row items-center">
           <div className="ml-5">
             <Image
@@ -51,7 +65,7 @@ const AbouthMare = () => {
             clientes.
           </p>
         </div>
-      </div>
+      )}
     </>
   );
 };
