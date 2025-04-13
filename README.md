@@ -34,19 +34,13 @@ Editar
 ```bash
 git clone https://github.com/LuanRebuli/mare-midia.git
 cd mare-midia
-Instale as dependências:
 
-bash
-Copiar
-Editar
+Instale as dependências:
 npm install
 # ou
 yarn install
-Rode o servidor de desenvolvimento:
 
-bash
-Copiar
-Editar
+Rode o servidor de desenvolvimento:
 npm run dev
 # ou
 yarn dev
